@@ -4,9 +4,9 @@ body {
     text-align: center;
     background: url('./bgImg.png') no-repeat center center fixed;
     background-size: cover;
-    color: white;
     margin: 0;
     padding: 0;
+    background-color: #35017e;
 }
 
 .Logo {
@@ -23,6 +23,7 @@ body {
     font-size: 3em;
     font-weight: 100;
     font-style: normal;
+    color: white;
 }
 
 .Logo span {
@@ -172,12 +173,17 @@ input[type="text"]:hover{
         align-items: center;
     }
 
+    .search-container i{
+        display: none;
+
+    }
+
     .search-container input[type="text"] {
         width: 100%;
         max-width: 300px;
         padding: 10px;
         margin-bottom: 20px;
-        border-radius: 5px;
+        border-radius: 25px;
         border: 1px solid #ccc;
     }
 
@@ -191,11 +197,16 @@ input[type="text"]:hover{
     .movie img {
         height: auto;
         width: 70%;
+        margin: auto auto;
     }
 
     .movie-details {
         font-size: 0.9em;
         margin: 10px;
+    }
+
+    .wrapper {
+        margin: 20px;
     }
 
     .rating {
