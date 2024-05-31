@@ -33,6 +33,9 @@ async function fetchMovieData(event) {
         console.error('Error fetching movie data:', error);
         loading.style.display = 'none'; // Hide loading indicator in case of error
         displayNoResults(searchQuery);
+    } finally {
+        isFetchingData = false; // Reset the flag after fetching data
+        
     }
 }
 
