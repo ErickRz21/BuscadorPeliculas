@@ -167,25 +167,39 @@ input[type="text"]:hover{
 
 @media (max-width: 600px) {
     .search-container {
+        display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .search-container input[type="text"] {
         width: 100%;
+        max-width: 300px;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
     }
 
-    .results {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    .movie {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .movie img {
-        height: 150px;
+        height: auto;
+        width: 70%;
     }
 
     .movie-details {
-        font-size: 0.8em;
-    }
-    .rating{
         font-size: 0.9em;
+        margin: 10px;
+    }
+
+    .rating {
+        font-size: 0.9em;
+        margin-top: 5px;
     }
 }
