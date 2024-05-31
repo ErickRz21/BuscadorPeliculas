@@ -1,0 +1,82 @@
+body {
+    font-family: "Patua One", serif;
+    font-style: normal;
+    text-align: center;
+    background: url('./bgImg.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.Logo {
+    margin: 20px 0;
+}
+
+.Logo h1 {
+    font-size: 3em;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.Logo span {
+    color: white;
+    font-weight: 900;
+}
+
+.container {
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+form {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+    /* Make it transparent */
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 500px;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#results {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie {
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.5);
+    /* Adds a semi-transparent background */
+    color: white;
+    /* Ensures text is readable */
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#loading {
+    display: none;
+    margin-top: 20px;
+}

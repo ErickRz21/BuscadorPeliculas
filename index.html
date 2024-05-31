@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Assets/styles.css">
+    <title>Movie Search</title>
+</head>
+
+<body>
+    <div class="Logo">
+        <h1>MOVIE<span>SEARCH</span></h1>
+    </div>
+
+    <div class="container">
+        <form onsubmit="fetchMovieData(event)">
+            <input type="text" name="search" placeholder="Movie">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+
+    <div id="results"></div>
+    <div id="loading">Loading...</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
