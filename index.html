@@ -14,24 +14,33 @@
 </head>
 
 <body>
+    <div class="content-wrapper">
         <div class="Logo">
             <h1>MOVIE<span>SEARCH</span></h1>
         </div>
 
-    <div class="container">
-        <form onsubmit="fetchMovieData(event)" id="movieForm">
-            <div class="search-container">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" name="search" placeholder="What are you looking for?">
+        <div class="container">
+            <form onsubmit="fetchMovieData(event)" id="movieForm">
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" name="search" placeholder="What are you looking for?">
+                </div>
+            </form>
+            <div class="wrapper" style="display: none;">
+                <div id="results"></div>
             </div>
-        </form>
+            <div id="loading">Loading...</div>
 
-        <div class="wrapper" style="display: none;">
-            <div id="results"></div>
         </div>
-        <div id="loading">Loading...</div>
     </div>
     <script src="script.js"></script>
+
+    <footer>
+        <p>&copy; 2024 Movie Search. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | <a href="https://github.com/ErickRz21">Contact Me</a>
+        </div>
+    </footer>
 </body>
 
 </html>
