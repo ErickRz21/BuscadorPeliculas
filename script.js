@@ -1,6 +1,8 @@
 //Up
 async function fetchMovieData(event) {
     event.preventDefault(); // Prevent the form from submitting the traditional way
+    if (isFetchingData) return; // If already fetching data, return early
+    isFetchingData = true;
     const searchQuery = document.querySelector('input[name="search"]').value;
     const apiKey = '6b66069'; // Replace with your actual API key
     const results = document.getElementById('results');
