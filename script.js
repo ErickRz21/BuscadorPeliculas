@@ -12,14 +12,14 @@ async function fetchMovieData(event) {
     wrapper.style.display = 'none'; // Hide the wrapper initially
 
     try {
-        const response = await fetch(`http://www.omdbapi.com/?s=${searchQuery}&apikey=${apiKey}`);
+        const response = await fetch(`https://www.omdbapi.com/?s=${searchQuery}&apikey=${apiKey}`);
         const data = await response.json();
         loading.style.display = 'none'; // Hide loading indicator
 
         if (data.Response === "True") {
             wrapper.style.display = 'block'; // Show the wrapper
             for (const movie of data.Search) {
-                const detailsResponse = await fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=${apiKey}`);
+                const detailsResponse = await fetch(`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=${apiKey}`);
                 const detailsData = await detailsResponse.json();
                 displayMovieData(detailsData);
             }
