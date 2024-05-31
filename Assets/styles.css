@@ -103,6 +103,7 @@ input[type="text"]:hover{
 
 .movie img {
     width: 30%;
+    height: auto;
     border-radius: 16px;
     margin-right: 20px;
 }
@@ -120,6 +121,11 @@ input[type="text"]:hover{
     font-size: 20px;
     font-weight: 400;
     display: block;
+}
+
+.movie-details p {
+    margin: 10px 0;
+    font-weight: 400;
 }
 
 .rating {
@@ -141,11 +147,6 @@ input[type="text"]:hover{
 
 .rating .fa-m {
     color: #1C1C1C;
-}
-
-.movie-details p {
-    margin: 10px 0;
-    font-weight: 400;
 }
 
 .wrapper {
