@@ -98,7 +98,7 @@ input[type="text"]:hover{
 .movie:hover{
     background: rgba(255, 255, 255, 0.32);
     transition: all 0.3s ease-in-out;
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
 .movie img {
@@ -155,11 +155,36 @@ input[type="text"]:hover{
         backdrop-filter: blur(7.3px);
         -webkit-backdrop-filter: blur(7.3px);
         border: 1px solid rgba(132, 132, 132, 0.48);
-        margin: 10px 30px;
+        margin: 10px 50px;
         padding: 10px;
 }
 
 #loading {
     display: none;
     margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+    }
+
+    .search-container input[type="text"] {
+        width: 100%;
+    }
+
+    .results {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .movie img {
+        height: 150px;
+    }
+
+    .movie-details {
+        font-size: 0.8em;
+    }
+    .rating{
+        font-size: 0.9em;
+    }
 }
