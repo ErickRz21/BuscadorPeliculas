@@ -33,24 +33,38 @@ function displayMovieData(movie) {
     const minutes = durationInMinutes % 60;
     const durationFormatted = `${hours}h ${minutes}m`;
 
-    const movieElement = document.createElement('div');
-    movieElement.className = 'movie';
-    movieElement.innerHTML = `
+    const movieContainer = document.createElement('div');
+    movieContainer.style.width = '100%';
+    movieContainer.className = 'movie';
+
+    movieContainer.innerHTML = `
         <img src="${movie.Poster !== "N/A" ? movie.Poster : 'http://placehold.it/300x400'}" alt="${movie.Title}" />
-        <p><strong>Title:</strong> ${movie.Title}</p>
-        <p><strong>Year:</strong> ${movie.Year}</p>
-        <p><strong>Category:</strong> ${movie.Genre}</p>
-        <p><strong>Duration:</strong> ${durationFormatted}</p>
-        <p><strong>Description:</strong> ${movie.Plot}</p>
-        <p><strong>Director:</strong> ${movie.Director}</p>
-        <p><strong>Writers:</strong> ${movie.Writer}</p>
-        <p><strong>Stars:</strong> ${movie.Actors}</p>
+        <div class="movie-details">
+            <p><strong>${movie.Title}</strong></p>
+            <p> ${movie.Year}, ${movie.Genre}, ${durationFormatted}</p>
+            <p>${movie.Plot}</p>
+            <p><strong>Director:</strong> ${movie.Director}</p>
+            <p><strong>Writers:</strong> ${movie.Writer}</p>
+            <p><strong>Stars:</strong> ${movie.Actors}</p>
+        </div>
+    `;
+    results.appendChild(movieContainer);
+
+     const ratingsDiv = document.createElement('div');
+    ratingsDiv.className = 'ratings';
+    ratingsDiv.innerHTML = `
+        <p><strong>Ratings:</strong></p>
         <p><strong>IMDB Rating:</strong> ${movie.imdbRating}</p>
         <p><strong>Rotten Tomatoes:</strong> ${rottenTomatoesRating ? rottenTomatoesRating.Value : 'N/A'}</p>
         <p><strong>Metacritic:</strong> ${movie.Metascore ? movie.Metascore : 'N/A'}</p>
     `;
-    results.appendChild(movieElement);
+    
+    // Append the ratingsDiv to movieContainer
+    movieContainer.appendChild(ratingsDiv);
 }
+
+
+
 
 function displayNoResults(query) {
     const results = document.getElementById('results');
