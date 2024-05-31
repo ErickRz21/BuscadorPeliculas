@@ -49,13 +49,17 @@ function displayMovieData(movie) {
         <img src="${movie.Poster !== "N/A" ? movie.Poster : 'http://placehold.it/300x400'}" alt="${movie.Title}" />
         <div class="movie-details">
             <h1><strong>${movie.Title}</strong></h1>
-            <h3><strong>${movie.Year} • ${movie.Rated} • ${durationFormatted}</strong></h3>
+            <h3><strong>${movie.Year} | ${movie.Rated} | ${durationFormatted}</strong></h3>
             <p>${movie.Plot}</p>
             <p><strong>Director:</strong> ${movie.Director}</p>
             <p><strong>Writers:</strong> ${movie.Writer}</p>
             <p><strong>Stars:</strong> ${movie.Actors}</p>
             <h1><strong>Ratings:</strong></h1>
-            <h2><strong>IMDB Rating:</strong> ${movie.imdbRating} <strong>Rotten Tomatoes:</strong> ${rottenTomatoesRating ? rottenTomatoesRating.Value : 'N/A'} <strong>Metacritic:</strong> ${movie.Metascore ? movie.Metascore : 'N/A'}</h2>
+            <div class="ratings">
+                <span class="rating"><i class="fas fa-star"></i> <strong>IMDB:</strong> ${movie.imdbRating}/10</span>
+                <span class="rating"><i class="fas fa-pizza-slice"></i> <strong>Rotten Tomatoes:</strong> ${rottenTomatoesRating ? rottenTomatoesRating.Value : 'N/A'}</span>
+                <span class="rating"><i class="fas fa-m"></i> <strong>Metacritic:</strong> ${movie.Metascore ? movie.Metascore : 'N/A'}/100</span>
+            </div>
         </div>
     `;
     results.appendChild(movieContainer);
