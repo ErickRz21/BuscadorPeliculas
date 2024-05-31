@@ -13,6 +13,7 @@ body {
     display: inline-block;
     margin-top: 20px;
     transition: all 0.3s ease-in-out;
+
 }
 
 .Logo:hover {
@@ -24,22 +25,17 @@ body {
     font-weight: 200;
     font-style: normal;
     color: white;
+    text-shadow: #ccc 2px 2px 2px;
 }
 
 .Logo span {
-    color: rgb(0, 255, 204);
+    color: rgb(247, 61, 61);
     font-weight: 900;
-}
-
-.container {
-    margin: 20px 0;
-    border-radius: 20px;
 }
 
 form {
     display: inline-block;
     padding: 20px;
-    border-radius: 10px;
 }
 
 .search-container .fa-magnifying-glass {
@@ -110,7 +106,6 @@ input[type="text"]:hover{
 
 .movie .details {
     flex: 1;
-    /* Take remaining space */
 }
 
 .movie-details h1 {
