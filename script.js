@@ -1,26 +1,34 @@
-//API https://www.omdbapi.com/?s=Narnia&apikey=6b66069
-
 async function fetchMovieData(event) {
     event.preventDefault(); // Prevent the form from submitting the traditional way
     const searchQuery = document.querySelector('input[name="search"]').value;
     const apiKey = '6b66069'; // Replace with your actual API key
     const results = document.getElementById('results');
     const loading = document.getElementById('loading');
+    const wrapper = document.querySelector('.wrapper');
 
     results.innerHTML = ''; // Clear previous results
     loading.style.display = 'block'; // Show loading indicator
+    wrapper.style.display = 'none'; // Hide the wrapper initially
 
-    const response = await fetch(`http://www.omdbapi.com/?s=${searchQuery}&apikey=${apiKey}`);
-    const data = await response.json();
-    loading.style.display = 'none'; // Hide loading indicator
+    try {
+        const response = await fetch(`http://www.omdbapi.com/?s=${searchQuery}&apikey=${apiKey}`);
+        const data = await response.json();
+        loading.style.display = 'none'; // Hide loading indicator
 
-    if (data.Response === "True") {
-        for (const movie of data.Search) {
-            const detailsResponse = await fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=${apiKey}`);
-            const detailsData = await detailsResponse.json();
-            displayMovieData(detailsData);
+        if (data.Response === "True") {
+            wrapper.style.display = 'block'; // Show the wrapper
+            for (const movie of data.Search) {
+                const detailsResponse = await fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=${apiKey}`);
+                const detailsData = await detailsResponse.json();
+                displayMovieData(detailsData);
+            }
+        } else {
+            wrapper.style.display = 'block'; // Show the wrapper even if no results
+            displayNoResults(searchQuery);
         }
-    } else {
+    } catch (error) {
+        console.error('Error fetching movie data:', error);
+        loading.style.display = 'none'; // Hide loading indicator in case of error
         displayNoResults(searchQuery);
     }
 }
@@ -40,33 +48,24 @@ function displayMovieData(movie) {
     movieContainer.innerHTML = `
         <img src="${movie.Poster !== "N/A" ? movie.Poster : 'http://placehold.it/300x400'}" alt="${movie.Title}" />
         <div class="movie-details">
-            <p><strong>${movie.Title}</strong></p>
-            <p> ${movie.Year}, ${movie.Genre}, ${durationFormatted}</p>
+            <h1><strong>${movie.Title}</strong></h1>
+            <h3><strong>${movie.Year} • ${movie.Rated} • ${durationFormatted}</strong></h3>
             <p>${movie.Plot}</p>
             <p><strong>Director:</strong> ${movie.Director}</p>
             <p><strong>Writers:</strong> ${movie.Writer}</p>
             <p><strong>Stars:</strong> ${movie.Actors}</p>
+            <h1><strong>Ratings:</strong></h1>
+            <h2><strong>IMDB Rating:</strong> ${movie.imdbRating} <strong>Rotten Tomatoes:</strong> ${rottenTomatoesRating ? rottenTomatoesRating.Value : 'N/A'} <strong>Metacritic:</strong> ${movie.Metascore ? movie.Metascore : 'N/A'}</h2>
         </div>
     `;
     results.appendChild(movieContainer);
-
-     const ratingsDiv = document.createElement('div');
-    ratingsDiv.className = 'ratings';
-    ratingsDiv.innerHTML = `
-        <p><strong>Ratings:</strong></p>
-        <p><strong>IMDB Rating:</strong> ${movie.imdbRating}</p>
-        <p><strong>Rotten Tomatoes:</strong> ${rottenTomatoesRating ? rottenTomatoesRating.Value : 'N/A'}</p>
-        <p><strong>Metacritic:</strong> ${movie.Metascore ? movie.Metascore : 'N/A'}</p>
-    `;
-    
-    // Append the ratingsDiv to movieContainer
-    movieContainer.appendChild(ratingsDiv);
 }
-
-
-
 
 function displayNoResults(query) {
     const results = document.getElementById('results');
     results.innerHTML = `<p>No results found for "${query}".</p>`;
 }
+
+const form = document.getElementById('movieForm');
+
+form.addEventListener('submit', fetchMovieData);

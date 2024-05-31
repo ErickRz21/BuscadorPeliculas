@@ -1,5 +1,5 @@
 body {
-    font-family: "Patua One", serif;
+    font-family: "Quicksand", serif;
     font-style: normal;
     text-align: center;
     background: url('./bgImg.png') no-repeat center center fixed;
@@ -10,7 +10,7 @@ body {
 }
 
 .Logo {
-    margin: 50px;
+    margin-top: 50px;
 }
 
 .Logo h1 {
@@ -20,7 +20,7 @@ body {
 }
 
 .Logo span {
-    color: white;
+    color: rgb(219, 219, 219);
     font-weight: 900;
 }
 
@@ -35,14 +35,33 @@ form {
     border-radius: 10px;
 }
 
+.search-container .fa-magnifying-glass {
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 12px;
+    color: white;
+}
+
 input[type="text"] {
-    padding: 12px;
+    padding: 12px 20px 12px 40px;
     width: 500px;
     border-radius: 20px;
     border: 1px solid #dddddd4a;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.32);
     color: white;
     font-size: 15px;
+}
+
+input[type="text"]::placeholder {
+    color: white;
+    font-size: 15px;
+    font-family: "Quicksand", serif;
+    font-weight: 400;
+}
+
+input[type="text"]:hover{
+    background: rgba(255, 255, 255, 0.50);
+    transition: all 0.3s ease-in-out;
 }
 
 #results {
@@ -55,6 +74,7 @@ input[type="text"] {
 .movie {
     display: flex;
     align-items: center;
+    text-align: left;
     margin: 10px;
     padding: 10px;
     color: white;
@@ -68,11 +88,15 @@ input[type="text"] {
     /* Add text shadow */
 }
 
+.movie:hover{
+    background: rgba(255, 255, 255, 0.32);
+    transition: all 0.3s ease-in-out;
+}
+
 .movie img {
-    flex: 0 0 25%;
-    /* Adjust image width as needed */
-    margin-right: 20px;
+    width: 30%;
     border-radius: 16px;
+    margin-right: 20px;
 }
 
 .movie .details {
@@ -80,8 +104,13 @@ input[type="text"] {
     /* Take remaining space */
 }
 
+.movie h1 {
+    font-weight: 600;
+}
+
 .movie p {
-    margin: 5px 0;
+    margin: 10px 0;
+    font-weight: 400;
 }
 
 .wrapper {

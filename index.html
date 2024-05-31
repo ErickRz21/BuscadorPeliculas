@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Movie Search</title>
 </head>
 
@@ -17,11 +18,14 @@
     </div>
 
     <div class="container">
-        <form onsubmit="fetchMovieData(event)">
-            <input type="text" name="search" placeholder="Movie">
+        <form onsubmit="fetchMovieData(event)" id="movieForm">
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" name="search" placeholder="What are you looking for?">
+            </div>
         </form>
-
-        <div class="wrapper">
+        
+        <div class="wrapper" style="display: none;">
             <div id="results"></div>
         </div>
         <div id="loading">Loading...</div>
