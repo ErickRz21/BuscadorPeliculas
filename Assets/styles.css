@@ -26,10 +26,6 @@ body {
 
 }
 
-.Logo:hover {
-    transform: scale(1.10);
-}
-
 .Logo h1 {
     font-size: 3em;
     font-weight: 200;
@@ -95,7 +91,7 @@ input[type="text"]:hover{
     font-weight: 400;
     background: rgba(132, 132, 132, 0.32);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(132, 132, 132, 0.48);
     transition: all 0.3s ease-in-out;
 }
@@ -153,11 +149,10 @@ input[type="text"]:hover{
 }
 
 .wrapper {
-    background: rgba(132, 132, 132, 0.32);
+    background: rgba(132, 132, 132, 0.42);
         border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 30px rgba(255, 0, 0, 0.1);
         backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
         border: 1px solid rgba(132, 132, 132, 0.48);
         margin: 10px 50px;
         padding: 10px;
@@ -172,8 +167,9 @@ footer {
     color: white;
     margin-top: 20px;
     padding: 10px 20px;
+    padding-bottom: 20px;
     text-align: center;
-    background: rgba(132, 132, 132, 0.32);
+    background: rgba(132, 132, 132, 0.50);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(132, 132, 132, 0.48);
     transition: all 0.3s ease-in-out;
