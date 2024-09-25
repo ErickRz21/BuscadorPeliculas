@@ -2,8 +2,6 @@ body {
     font-family: "Quicksand", serif;
     font-style: normal;
     text-align: center;
-    background: url('./bgImg.png') no-repeat center center fixed;
-    background-size: cover;
     margin: 0;
     padding: 0;
     display: flex;
@@ -31,11 +29,11 @@ body {
     font-weight: 200;
     font-style: normal;
     color: white;
-    text-shadow: #ccc 2px 2px 2px;
+    text-shadow: #ccc 0 5px 4px;
 }
 
 .Logo span {
-    color: rgb(255, 86, 86);
+    color: rgb(3, 247, 235);
     font-weight: 900;
 }
 
@@ -151,7 +149,7 @@ input[type="text"]:hover{
 .wrapper {
     background: rgba(132, 132, 132, 0.42);
         border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(255, 0, 0, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(5px);
         border: 1px solid rgba(132, 132, 132, 0.48);
         margin: 10px 50px;
