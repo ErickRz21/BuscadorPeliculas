@@ -162,13 +162,12 @@ input[type="text"]:hover{
 
 footer {
     color: white;
-    margin-top: 20px;
-    padding: 10px 20px;
-    padding-bottom: 20px;
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 30px;
     text-align: center;
-    background: rgba(132, 132, 132, 0.50);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(132, 132, 132, 0.48);
+    border-top: 1px solid rgba(132, 132, 132);
     transition: all 0.3s ease-in-out;
 }
 
@@ -188,6 +187,10 @@ footer p{
 }
 
 .footer-links a:hover {
+    color: white;
+}
+
+#results p{
     color: white;
 }
 
