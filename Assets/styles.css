@@ -1,5 +1,5 @@
 body {
-    font-family: "Quicksand", serif;
+    font-family: "Bricolage Grotesque", serif;
     font-style: normal;
     text-align: center;
     margin: 0;
@@ -29,12 +29,12 @@ body {
     font-weight: 200;
     font-style: normal;
     color: white;
-    text-shadow: #ccc 0 5px 4px;
+    text-shadow: #ccc 0 5px 3px;
 }
 
 .Logo span {
     color: rgb(3, 247, 235);
-    font-weight: 900;
+    font-weight: 600;
 }
 
 form {
@@ -65,7 +65,6 @@ input[type="text"] {
 input[type="text"]::placeholder {
     color: rgba(0, 0, 0, 0.576);
     font-size: 18px;
-    font-family: "Quicksand", serif;
     font-weight: 700;
 }
 
@@ -180,16 +179,16 @@ footer p{
 
 .footer-links a {
     font-size: 16px;
-    color: white;
+    color: #FFD700;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     font-weight: 400;
     margin: 0 10px;
+    text-decoration: underline;
 }
 
 .footer-links a:hover {
-    text-decoration: underline;
-    color: #FFD700;
+    color: white;
 }
 
 @media (max-width: 600px) {
