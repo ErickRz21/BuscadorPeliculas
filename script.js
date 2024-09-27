@@ -2,10 +2,13 @@ let isFetchingData = false;
 
 async function fetchMovieData(event) {
     event.preventDefault(); // Prevent the form from submitting the traditional way
+    const searchInput = document.querySelector('input[name="search"]');
+    searchInput.blur(); // Remove focus from the input field
+    
     if (isFetchingData) return; // If already fetching data, return early
     isFetchingData = true;
 
-    const searchQuery = document.querySelector('input[name="search"]').value;
+    const searchQuery = searchInput.value;
     const apiKey = '6b66069';
     const results = document.getElementById('results');
     const loading = document.getElementById('loading');
