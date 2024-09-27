@@ -25,16 +25,17 @@ body {
 }
 
 .Logo h1 {
-    font-size: 3em;
-    font-weight: 200;
+    font-size: 4em;
+    font-weight: 100;
     font-style: normal;
-    color: white;
-    text-shadow: #ccc 0 5px 3px;
+    color: transparent;
+    -webkit-text-stroke: 1px #F8F8F8;
 }
 
 .Logo span {
-    color: rgb(3, 247, 235);
-    font-weight: 600;
+    color: white;
+    text-shadow: none;
+    font-weight: 300;
 }
 
 form {
@@ -125,7 +126,9 @@ input[type="text"]:hover{
 }
 
 .rating {
-    margin-left: 25px;
+    display: inline-block;
+    margin: 0 20px;
+    padding: 15px;
 }
 
 .rating i {
@@ -151,7 +154,7 @@ input[type="text"]:hover{
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(5px);
         border: 1px solid rgba(132, 132, 132, 0.48);
-        margin: 10px 50px;
+        margin: 10px 175px;
         padding: 10px;
 }
 
@@ -198,6 +201,9 @@ footer p{
 }
 
 @media (max-width: 600px) {
+    .Logo h1 {
+        font-size: 3em;
+    }
     .search-container {
         display: flex;
         flex-direction: column;
@@ -244,6 +250,7 @@ footer p{
         font-size: 0.9em;
         margin-top: 5px;
         display: block;
+        padding: 0;
     }
 
     footer {
