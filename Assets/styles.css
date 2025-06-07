@@ -95,13 +95,14 @@ input[type="text"]:hover{
 
 .movie:hover{
     background: rgba(255, 255, 255, 0.32);
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
 .movie img {
-    width: 30%;
+    min-width: 20%;
+    max-width: 25%;
     height: auto;
-    border-radius: 16px;
+    border-radius: 13px;
     margin-right: 20px;
 }
 
@@ -153,7 +154,7 @@ input[type="text"]:hover{
 
 .wrapper {
     background: rgba(132, 132, 132, 0.42);
-        border-radius: 16px;
+        border-radius: 19px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(5px);
         border: 1px solid rgba(132, 132, 132, 0.48);
@@ -234,7 +235,8 @@ footer p{
 
     .movie img {
         height: auto;
-        width: 70%;
+        min-width: 70%;
+        max-width: 70%;
         margin: auto auto;
     }
 
