@@ -56,7 +56,9 @@ function displayMovieData(movie) {
     movieContainer.className = 'movie';
 
     movieContainer.innerHTML = `
-        <img src="${movie.Poster !== "N/A" ? movie.Poster : 'http://placehold.it/300x400'}" alt="${movie.Title}" />
+        <img src="${movie.Poster && !['N/A', 'n/a'].includes(movie.Poster) ? movie.Poster : 'https://placehold.co/300x400'}" 
+        alt="${movie.Title || 'No title available'}"
+        onerror="this.src='https://placehold.co/300x400'" />
         <div class="movie-details">
             <h1><strong>${movie.Title}</strong></h1>
             <h3><strong>${movie.Year} | ${movie.Rated} | ${durationFormatted}</strong></h3>
